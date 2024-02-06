@@ -1,30 +1,55 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import MasjidInfoView from '../views/MasjidInfoView'
+import { createRouter, createWebHistory } from "vue-router";
+import HomeView from "@/views/HomeView.vue";
+import SlidesView from "@/views/SlidesView.vue";
+import MasjidInfoView from "@/views/MasjidInfoView.vue";
+import MasjidConfigView from '@/views/MasjidConfigView.vue'
+import HadistView from "@/views/HadistView.vue";
+import DashboardView from "@/views/DashboardView.vue";
+import MarqueeView from "@/views/MarqueeView.vue";
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  { 
-    path: '/masjidInfo',
-    name: 'masjidInfo',
-    component: MasjidInfoView
-  },
+    path: "/",
+    name: "home",
+    component: HomeView,
+  },  
   {
-    path: '/about',
-    name: 'about',
-    component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-    }
-  }
-]
+    path: "/dashboard",
+    name: "dashboard",
+    component: DashboardView,
+    children: [
+      {
+        path: "/slides",
+        name: "slides",
+        component: SlidesView,
+      },
+      {
+        path: "/masjidinfo",
+        name: "masjidinfo",
+        component: MasjidInfoView,
+      },
+      {
+        path: "/masjidconfig",
+        name: "masjidconfig",
+        component: MasjidConfigView,
+      },
+      {
+        path: "/hadist",
+        name: "hadist",
+        component: HadistView,
+      },
+      {
+        path: "/marquee",
+        name: "marquee",
+        component: MarqueeView,
+      },
+    ],
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

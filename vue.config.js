@@ -4,21 +4,27 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
 module.exports = defineConfig({
+  transpileDependencies: [
+    'quasar'
+  ],
+
   pluginOptions: {
     quasar: {
       importStrategy: 'kebab',
       rtlSupport: false
     }
   },
-  transpileDependencies: [
-    'quasar'
-  ],
+
+  configureWebpack: {
+    plugins: [new MiniCssExtractPlugin()],
+  },
+
   devServer: {
     // outputDir: path.resolve(__dirname,'../BE/public'),
     proxy:{
       '^/api':{
-        // target: 'http://localhost:3001'
-        target: 'https://imasjid-cloud-be.vercel.app'
+        target: 'http://localhost:3000'
+        // target: 'https://imasjid-cloud-be.vercel.app'
       }
     }
   }
