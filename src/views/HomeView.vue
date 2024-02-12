@@ -78,7 +78,8 @@
   </div>
   <div class="footer">
     <p class="footer-left">
-      <i class="fas fa-user-cog"></i>
+      
+      <i class="fas fa-user-cog" @click="openDashboard()" style="cursor:pointer"></i>
       iMasjid 2.0 
       <i class="far fa-copyright"></i>{{ masjid.MasjidName }}
     </p>
@@ -110,6 +111,7 @@ import Get from "@/api/http-get";
 import HijrahDate from "hijrah-date";
 import { Coordinates, CalculationMethod, PrayerTimes } from "adhan";
 import moment from "moment";
+import Router from "@/router/index";
 
 export default {
   components: {
@@ -233,6 +235,11 @@ export default {
   },
 
   methods: {
+    openDashboard(){
+      let route = this.$router.resolve({ path: "/dashboard" });
+      window.open(route.href);
+    },
+
     async getMasjidConfig() {
       const result = (await Get.masjidConfig()).data;
 

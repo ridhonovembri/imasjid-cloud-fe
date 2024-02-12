@@ -368,8 +368,8 @@ export default {
   },
   methods: {
     async updatemasjidConfig() {
-      console.log("masjidConfig", this.masjidConfig);
-      console.log("this.masjidConfig.id", this.masjidConfig.Id);
+      // console.log("masjidConfig", this.masjidConfig);
+      // console.log("this.masjidConfig.id", this.masjidConfig.Id);
       // Update.masjidConfig();
       await Update.masjidConfig(this.masjidConfig.Id, this.masjidConfig).then(
         (res) => {
@@ -391,7 +391,7 @@ export default {
 
     async getmasjidConfig() {
       this.masjidConfig = (await Get.masjidConfig()).data;
-      console.log('masjidConfig', this.masjidConfig)
+      // console.log('masjidConfig', this.masjidConfig)
     },
   },
 };
