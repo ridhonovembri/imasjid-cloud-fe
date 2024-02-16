@@ -15,7 +15,8 @@ Aplikasi ini 100% GRATIS untuk digunakan, disalin, dimodifikasi, didistribusikan
 
 :author={RNOVEMBRI}
 
-![image](https://github.com/ridhonovembri/imasjid/assets/6411417/3adceab6-b4d3-45f6-a804-3d05682a81f6)
+![image](https://github.com/ridhonovembri/imasjid-cloud-fe/assets/6411417/20a4a91f-468e-4842-8f41-e69be04ece77)
+
 
 ![image](https://github.com/ridhonovembri/imasjid/assets/6411417/bb53d77e-e56b-4ab2-b6a0-da199e8d1e7b)
 
