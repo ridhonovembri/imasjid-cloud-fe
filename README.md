@@ -1,4 +1,4 @@
-**Imasjid 2.0.0 - Prayer Time Application**
+**Imasjid 2.0. - Prayer Time Application**
 -
 Imasjid FrontEnd Application for cloud version and hosted in Vercel [https://vercel.com/](https://vercel.com/)
 
