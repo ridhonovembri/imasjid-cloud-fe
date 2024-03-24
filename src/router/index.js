@@ -6,6 +6,7 @@ import MasjidConfigView from '@/views/MasjidConfigView.vue'
 import HadistView from "@/views/HadistView.vue";
 import DashboardView from "@/views/DashboardView.vue";
 import MarqueeView from "@/views/MarqueeView.vue";
+import SoundBeepView from '@/views/SoundBeep.vue';
 
 const routes = [
   {
@@ -42,6 +43,11 @@ const routes = [
         path: "/marquee",
         name: "marquee",
         component: MarqueeView,
+      },
+      {
+        path: "/beep",
+        name: "beep",
+        component: SoundBeepView,
       },
     ],
   },

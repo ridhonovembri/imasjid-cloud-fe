@@ -1,6 +1,6 @@
 <template>
   <div class="text-grey-1" :style="{'font-size': fontSizeMarquee}">
-    <marquee>{{ text }} </marquee>
+    <marquee scrollamount="8">{{ text }} </marquee>
   </div>
 </template>
 

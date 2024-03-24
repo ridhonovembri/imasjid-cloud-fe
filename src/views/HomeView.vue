@@ -5,7 +5,9 @@
         v-model="currentSlide"
         infinite     
         style="height: 100vh"
-        :autoplay="autoplay"
+        :autoplay="autoplay"        
+        animated
+        transition-duration="800"
       >
         <q-carousel-slide
           v-for="slide in slides"
@@ -84,7 +86,7 @@
       <i class="far fa-copyright"></i>{{ masjid.MasjidName }}
     </p>
     <p class="footer-right">
-      <i class="fas fa-phone-alt"></i> +62821-711-88500 |
+      <i class="fas fa-phone-alt"></i> +62821-711-88500 
       <i class="fab fa-github" style="font-size:18px"></i> https://github.com/ridhonovembri/imasjid
     </p>  
   </div>
@@ -231,10 +233,18 @@ export default {
   },
 
   mounted() {
-    setInterval(() => this.getClock(), 1000);
+    setInterval(() => this.getClock(), 1000);    
   },
 
   methods: {
+
+    playBeep(){
+        var beep = new Audio('/assets/sounds/SoundsBeep.mp3');
+        // beep.muted = false;
+        beep.play();
+        // console.log('play beep')
+    },
+
     openDashboard(){
       let route = this.$router.resolve({ path: "/dashboard" });
       window.open(route.href);
@@ -298,7 +308,6 @@ export default {
             
       this.autoplay = result.IntervalSlide
       // console.log('this.config', this.config)
-
     },
     
     async getMasjidInfo() {
@@ -354,7 +363,7 @@ export default {
       let today = new Date();
 
       //testing
-      // let currentTime = moment(today).add(354, "m");
+      // let currentTime = moment(today).subtract(254, "m");
     
 
       //actual
@@ -399,6 +408,7 @@ export default {
 
         //start to sholat
         if (moment(currentTime) > (moment(this.prayTimeAll.fajr).add(this.config.AdjustShubuh+this.config.MinutesToIqomahShubuh,'m'))) {       
+          // this.playBeep()
           this.showCountDownAdzan = false
           this.prepAdzan = false
           this.prepIqomah = false
